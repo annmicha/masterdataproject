@@ -303,8 +303,6 @@ public class LaptopClustering {
 		createCluster(itemList);
 
 		System.out.println("\n***** Start Clustering *********\n");
-
-		// n1
 		clustering();
 
 		printClusterFile("data/output/clusters_laptops.csv");
