@@ -11,7 +11,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class D_Clustering {
+public class DogfoodClustering {
 	public static HashSet<Dogfood> dogList;
 	public static HashSet<D_Cluster> clusterList;
 	public static HashSet<String> clusterCheck;
@@ -86,7 +86,6 @@ public class D_Clustering {
 				count++;
 			}
 
-			// ATTENTION! NO ITERATION; ONLY **one** VALUE IS CATCHED
 			Iterator<String> i = c.getIDValues().iterator();
 
 			System.out.println("ClusterID: " + c.getClusterId() + " created [identifiers: " + i.next() + "]");
@@ -148,8 +147,6 @@ public class D_Clustering {
 		HashSet<String> h1 = c1.getIDValues();
 		HashSet<String> h2 = c2.getIDValues();
 
-		// only based on last 7 digits - no difference
-
 		for (String s : h1) {
 
 			s = s.substring(s.length() - 8, s.length());
@@ -164,13 +161,6 @@ public class D_Clustering {
 				overlap = true;
 			}
 		}
-
-//		for (String id : h1) {
-//			if (h2.contains(id)) {
-//				overlap = true;
-//				// System.out.println(id + " has been found.");
-//			}
-//		}
 		return overlap;
 	}
 

@@ -19,7 +19,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import masterdataproject.model.*;
 
-public class L_Clustering {
+public class LaptopClustering {
 	public static HashSet<Laptop> itemList;
 	public static HashSet<L_Cluster> clusterList;
 	public static HashSet<String> clusterCheck;
@@ -46,7 +46,6 @@ public class L_Clustering {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF8"));
 			while ((line = br.readLine()) != null) {
 
-//				if ((count > 0) && (count < 5000)) {
 				if ((count > 0)) {
 					String[] array = null;
 					array = line.split(",");
@@ -68,13 +67,7 @@ public class L_Clustering {
 
 						}
 
-//							temp.add(array[1].replaceAll("\\s", ""));
-//							temp.add(array[2].replaceAll("\\s", ""));
-//							temp.add(array[3].replaceAll("\\s", ""));
-
 						itemList.add(new Laptop(array[0].replaceAll("\\s", ""), array[4].replaceAll("\\s", ""), temp));
-//							itemList.add(new Laptop(array[0], array[1], array[2]));
-
 					}
 
 				}
