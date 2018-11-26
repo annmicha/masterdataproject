@@ -89,7 +89,7 @@ public class DogfoodClustering {
 
 			Iterator<String> i = c.getIDValues().iterator();
 
-			System.out.println("ClusterID: " + c.getClusterId() + " created [identifiers: " + i.next() + "]");
+//			System.out.println("ClusterID: " + c.getClusterId() + " created [identifiers: " + i.next() + "]");
 			clusterList.add(c);
 		}
 	}
@@ -109,8 +109,8 @@ public class DogfoodClustering {
 			c.updateIDValues();
 		}
 
-		System.out.println("New cluster " + c.getClusterId() + ", from " + c1.getClusterId() + c2.getClusterId() + " "
-				+ c.getIDValues().toString());
+//		System.out.println("New cluster " + c.getClusterId() + ", from " + c1.getClusterId() + c2.getClusterId() + " "
+//				+ c.getIDValues().toString());
 
 		return c;
 	}
@@ -165,13 +165,6 @@ public class DogfoodClustering {
 		return overlap;
 	}
 
-	public void testBlocking() {
-
-		/**
-		 * sort Identifiers into buckets only compare within the same bucket
-		 */
-	}
-
 	// Compares clustersfrom clusterList, only if their are distinct and have not
 	// been compared in the same round before
 	public static void findClusters() {
@@ -193,7 +186,7 @@ public class DogfoodClustering {
 					if ((!hasBeenTested(c1, c2)) && (!c2.getHasBeenMatched()) && (!c1.getHasBeenMatched())) {
 						boolean test = findOverlap(c1, c2);
 						count++;
-						System.out.println(count + ": " + c1.getClusterId()+c2.getClusterId());
+//						System.out.println(count + ": " + c1.getClusterId()+c2.getClusterId());
 						if (test) {
 							D_Cluster new_cluster = merge(c1, c2);
 							valuesToAdd.add(new_cluster);
@@ -215,7 +208,7 @@ public class DogfoodClustering {
 		int size_after = 0;
 		int count = 1;
 
-//		while (size_before != size_after) {
+		while (size_before != size_after) {
 
 			System.out.println("\n***** Find Clusters Round " + count);
 
@@ -227,7 +220,7 @@ public class DogfoodClustering {
 			System.out.println("Clustersize now: " + size_before + " / " + size_after);
 			count++;
 
-//		}
+		}
 	}
 
 	public static void main(String[] args) {
