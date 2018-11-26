@@ -295,8 +295,7 @@ public class LaptopClustering {
 
 		// reads file into Dogfood HashSet
 		System.out.println("\n***** New File Read *********\n");
-//		readDataLineByLine("\\Users\\ankmi\\Desktop\\laptop_final_gtin.csv");
-		readDataLineByLine("\\Users\\ankmi\\Desktop\\laptops_all_Nov24_Savingslots_cleansed.csv");
+		readDataLineByLine("\\Users\\ankmi\\Desktop\\laptops_all_offers_Nov23.csv");
 
 		// turns dogfood items into single clusters
 		System.out.println("\n***** Initiate Clusters *********\n");
@@ -307,7 +306,7 @@ public class LaptopClustering {
 		// n1
 		clustering();
 
-		printClusterFile("data_output/clusters_laptopsAll_Nov24_SavingsLot.csv");
+		printClusterFile("output/clusters_laptops.csv");
 
 	}	 
 }
