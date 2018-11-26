@@ -1,4 +1,4 @@
-package masterdataproject.model;
+package masterwebdataproject.model;
 
 
 public class Dogfood {

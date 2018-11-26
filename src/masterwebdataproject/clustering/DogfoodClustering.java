@@ -1,6 +1,5 @@
-package masterdataproject.clustering;
+package masterwebdataproject.clustering;
 import java.io.BufferedReader;
-import masterdataproject.model.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,6 +9,8 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.HashSet;
 import java.util.Iterator;
+
+import masterwebdataproject.model.*;
 
 public class DogfoodClustering {
 	public static HashSet<Dogfood> dogList;

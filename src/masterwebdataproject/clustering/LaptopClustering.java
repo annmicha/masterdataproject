@@ -1,4 +1,4 @@
-package masterdataproject.clustering;
+package masterwebdataproject.clustering;
 
 
 import java.io.BufferedReader;
@@ -17,7 +17,8 @@ import java.io.Writer;
 import java.util.ConcurrentModificationException;
 import java.util.HashSet;
 import java.util.Iterator;
-import masterdataproject.model.*;
+
+import masterwebdataproject.model.*;
 
 public class LaptopClustering {
 	public static HashSet<Laptop> itemList;

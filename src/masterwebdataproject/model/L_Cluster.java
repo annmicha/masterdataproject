@@ -1,4 +1,4 @@
-package masterdataproject.model;
+package masterwebdataproject.model;
 
 import java.util.HashSet;
 import java.util.Iterator;

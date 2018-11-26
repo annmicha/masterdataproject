@@ -1,4 +1,4 @@
-package masterdataproject.comparators;
+package masterwebdataproject.comparators;
 
 public class NameLevenshtein {
  /* 
