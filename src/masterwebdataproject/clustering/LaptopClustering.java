@@ -296,7 +296,7 @@ public class LaptopClustering {
 
 		// reads file into Dogfood HashSet
 		System.out.println("\n***** New File Read *********\n");
-		readDataLineByLine("data/input/laptops_all_offers_Nov23.csv");
+		readDataLineByLine("data/input/laptops.csv");
 
 		// turns dogfood items into single clusters
 		System.out.println("\n***** Initiate Clusters *********\n");

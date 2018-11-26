@@ -236,7 +236,7 @@ public class DogfoodClustering {
 
 		// reads file into Dogfood HashSet
 		System.out.println("\n***** New File Read *********\n");
-		readDataLineByLine("\\Users\\ankmi\\Desktop\\Dogfood.csv");
+		readDataLineByLine("data/input/dogfood.csv");
 
 		// turns dogfood items into single clusters
 		System.out.println("\n***** Initiate Clusters *********\n");
@@ -247,21 +247,7 @@ public class DogfoodClustering {
 		System.out.println("\n***** Start Clustering *********\n");
 		clustering();
 
-//		Writer writer = null;
-//
-//		try {
-//		    writer = new BufferedWriter(new OutputStreamWriter(
-//		          new FileOutputStream("filename.txt"), "utf-8"));
-//		    for (Cluster c: clusterList) {
-//		    	writer.write(c.toString() + "\n");
-//		    }
-//		} catch (IOException ex) {
-//		    // Report
-//		} finally {
-//		   try {writer.close();} catch (Exception ex) {/*ignore*/}
-//		}
-
-		String filepath = "clusters_dogfood.csv";
+		String filepath = "data/output/clusters_dogfood.csv";
 		PrintWriter pw;
 		try {
 			pw = new PrintWriter(new File(filepath));
