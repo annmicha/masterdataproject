@@ -54,7 +54,7 @@ public class L_Cluster {
 	}
 
 	// clears IDValues list and adds all identifiers from itemList
-	protected void updateIDValues() {
+	public void updateIDValues() {
 		idValues.clear();
 
 		Iterator<Laptop> it = itemList.iterator();

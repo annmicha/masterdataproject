@@ -48,7 +48,7 @@ public class D_Cluster {
 	}
 	
 	// clears IDValues list and adds all identifiers from dogList
-	protected void updateIDValues() {
+	public void updateIDValues() {
 		idValues.clear();
 		
 		Iterator<Dogfood> it = dogList.iterator();
