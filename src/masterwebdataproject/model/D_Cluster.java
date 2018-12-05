@@ -103,7 +103,7 @@ public class D_Cluster {
 	public String toString() {
 		String s = "";
 		for (Dogfood d : dogList) {
-			s += d.getID();
+			s += d.getID() + ";";
 		}
 		return this.cluster_id + ", " + 
 				this.idValues.toString() + ", " + 
