@@ -2,19 +2,13 @@ package masterwebdataproject.clustering;
 
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.io.Writer;
-import java.util.ConcurrentModificationException;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -46,31 +40,26 @@ public class LaptopClustering {
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF8"));
 			while ((line = br.readLine()) != null) {
-
-				if ((count > 0)) {
+				if ((count > 0) && (count <= 12710)) {
 					String[] array = null;
 					array = line.split(",");
-
-					if (array.length == 5) {
-						// 0 > offer_id
-						// 1 > id1
-						// 2 > id2
-						// 3 > id3
-						// 4 > name
-						// new laptop (String identifier, String name, HashSet)
-
+					
+						// 0 > offer_id // offerID
+						// 1 > id1 // clusterID
+						// 2 > id2 // gtin
+						// 3 > id3 // mpn
+						// 4 > name // sku
+						// 5 > // name
+						
 						HashSet<String> temp = new HashSet<String>();
 
-						for (int counter = 1; counter < 4; counter++) {
+						for (int counter = 2; counter < 5; counter++) {
 							if (!array[counter].isEmpty()) {
 								temp.add(array[counter].replaceAll("\\s", ""));
 							}
-
 						}
 
-						itemList.add(new Laptop(array[0].replaceAll("\\s", ""), array[4].replaceAll("\\s", ""), temp));
-					}
-
+						itemList.add(new Laptop(array[0].replaceAll("\\s", ""), array[5].replaceAll("\\s", ""), temp));
 				}
 				count++;
 			}
@@ -296,7 +285,7 @@ public class LaptopClustering {
 
 		// reads file into Dogfood HashSet
 		System.out.println("\n***** New File Read *********\n");
-		readDataLineByLine("data/input/laptops_2.csv");
+		readDataLineByLine("data/input/Laptop_final_unprocessed_Jan1.csv");
 
 		// turns dogfood items into single clusters
 		System.out.println("\n***** Initiate Clusters *********\n");
@@ -305,7 +294,7 @@ public class LaptopClustering {
 		System.out.println("\n***** Start Clustering *********\n");
 		clustering();
 
-		printClusterFile("data/output/clusters_laptops2.csv");
+		printClusterFile("data/output/clusters_laptops_Jan2.csv");
 
 	}	 
 }
